@@ -17,7 +17,7 @@ export default function LandingPage() {
           in between.
         </Hero.Subtitle>
         <Hero.Actions>
-          <Button to="/subs/introduction">Get Started</Button>
+          <Button to="/subs/intro">Get Started</Button>
           <Button to="https://wyzie.ru" type="secondary">
             Check it Out
           </Button>

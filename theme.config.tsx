@@ -4,19 +4,6 @@ import { NextSeo } from 'next-seo';
 import transparentLogo from "./public/transparent-logo.png"; 
 import faviconUrl from "./public/favicon.png";
 
-const starLinks = [
-  link('GitHub', 'https://github.com/itzcozi/wyzie-subs', {
-    style: 'star',
-    newTab: true,
-    icon: 'akar-icons:github-fill',
-  }),
-  link('Discord', 'https://discord.gg/2mxraHBVtB', {
-    style: 'star',
-    newTab: true,
-    icon: 'fa6-brands:discord',
-  }),
-];
-
 const usageGuide = (url: string) => `/subs/usage/${url}`;
 
 export default defineTheme({
@@ -78,9 +65,9 @@ export default defineTheme({
   directories: [
     directory("main", {
       sidebar: [
-        ...starLinks,
         group("Wyzie Subs", [
-          link("Introduction", "/subs/introduction"),
+          link("Introduction", "/subs/intro"),
+          link("Hosting", "/subs/hosting"),
           link.nested({
               title: 'Usage',
               items: [
@@ -96,7 +83,8 @@ export default defineTheme({
             }),
         ]),
         group("Wyzie Proxy", [
-          link("Introduction", "/proxy/introduction"),
+          link("Introduction", "/proxy/intro"),
+          link("Hosting", "/proxy/hosting"),
         ]),
       ]
     })
