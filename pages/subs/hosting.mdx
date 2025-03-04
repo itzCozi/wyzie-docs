@@ -4,3 +4,15 @@ title: 'Hosting Wyzie Subs'
 
 # Hosting Wyzie Subs
 
+Anyone can host Wyzie Subs, but it costs a lot of money. Wyzie relies on a swarm of proxies to do its bidding (around 200+). These proxies can be hosted basically anywhere: Cloudflare Workers, Netlify, Railway, Vercel, Azure—the list goes on. They are extremely fast and lightweight and can be used to proxy requests. We then cache all of the data we serve, so we only make a limited number of requests to Open-Subtitles. Additionally, the public Wyzie Subs code is not up-to-date with the currently deployed version, meaning some secret sauce is missing.
+
+<Warning>
+Without a sufficient number of proxies, the API will not work and will continuously return 500 errors because it is getting blocked.
+</Warning>
+
+## Steps
+
+1. Create about 100 proxies following this [guide](/proxy/hosting) hosted anywhere.
+2. Load the proxies into the `proxies.json` file in your Wyzie Subs repository.
+3. Build Wyzie Subs and host it basically anywhere (I prefer Cloudflare Workers).
+4. Ensure that a transform rule is configured to set `Access-Control-Allow-Origin` to `*`.

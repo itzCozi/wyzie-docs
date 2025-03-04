@@ -33,7 +33,7 @@ export default function LandingPage() {
             We pride ourselves on our consistent uptime and (almost) daily
             updates as well as fast caching.
           </Card>
-          <Card icon="mdi:beach" title="Simplcity Redefined">
+          <Card icon="mdi:beach" title="Simplicity Redefined">
             Easy to implement, easy to use. Wyzie is designed to be as simple as
             possible.
           </Card>

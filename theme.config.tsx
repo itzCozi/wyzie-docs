@@ -26,13 +26,13 @@ export default defineTheme({
   meta: (pageMeta) => (
     <NextSeo {...{
       title: `${pageMeta.title ?? "Free, Open-Source API"} | Wyzie Docs`,
-      description: pageMeta.description ?? "The offical documentation for the Wyzie toolset.",
+      description: pageMeta.description ?? "The official documentation for the Wyzie toolset.",
       openGraph: {
         images: [{
           url: transparentLogo.src,
         }],
         title: `${pageMeta.title ?? "Free, Open-Source API"} | Wyzie Docs`,
-        description: pageMeta.description ?? "The offical documentation for the Wyzie toolset.",
+        description: pageMeta.description ?? "The official documentation for the Wyzie toolset.",
       },
       twitter: {
         cardType: 'summary',
@@ -55,7 +55,7 @@ export default defineTheme({
       "background": "#0b0b0b",
       "backgroundLighter": "#111",
       "backgroundLightest": "#181818",
-      "backgroundDarker": "#000000",
+      "backgroundDarker": "#070707",
       "line": "#333",
       "text": "#c0c0c0",
       "textLighter": "#d0d0d0",

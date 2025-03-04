@@ -3,4 +3,70 @@ title: 'Using the Wyzie NPM Package'
 ---
 
 # Using the Wyzie NPM Package
+The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the best way to use Wyzie Subs if your project is in JavaScript or TypeScript. Wyzie Lib (the NPM package) is fast, simple, and reliable, as well as having an onboard VTT parser for parsing subtitles into VTT format.
 
+## Installation
+
+<CodeGroup>
+  <CodeGroup.Code title="NPM">
+    ```bash
+    npm install wyzie-lib
+    ```
+  </CodeGroup.Code>
+  <CodeGroup.Code title="PNPM">
+    ```bash
+    pnpm install wyzie-lib
+    ```
+  </CodeGroup.Code>
+  <CodeGroup.Code title="Yarn">
+    ```bash
+    yarn add wyzie-lib
+    ```
+  </CodeGroup.Code>
+</CodeGroup>
+
+## Usage
+
+<CodeGroup>
+  <CodeGroup.Code title="Fetching Subtitles">
+    ```ts
+    import { type SubtitleData, searchSubtitles, parseToVTT } from "wyzie-lib";
+    
+    // Fetches all subtitles for the media with the TMDB ID 286217
+    const data: SubtitleData[] = await searchSubtitles({ tmdb_id: 286217, format: "srt" });
+    console.log(data[0].id); // Prints the ID of the first subtitle object
+    ```
+  </CodeGroup.Code>
+  <CodeGroup.Code title="VTT Parser">
+    ```ts
+    import { type SubtitleData, searchSubtitles, parseToVTT } from "wyzie-lib";
+
+    // Fetches all subtitles for the media with the TMDB ID 286217
+    const data: SubtitleData[] = await searchSubtitles({ tmdb_id: 286217, format: "srt" });
+    // Converts the first subtitle from SRT to VTT format
+    const vttContent = await parseToVTT(data[0].url); // Passes the first subtitle URL
+    console.log(vttContent); // Prints the raw VTT content
+    ```
+  </CodeGroup.Code>
+</CodeGroup>
+
+### Parameters
+
+| Parameter    | Name              | Description                                                                               |
+| ------------ | ----------------- | ----------------------------------------------------------------------------------------- |
+| **tmdb_id**  | TmdbId            | The TMDB ID of the movie or TV show. _(tmdb_id or imdb_id is required)_                   |
+| **imdb_id**  | ImdbId            | The IMDB ID of the movie or TV show. _(imdb_id or tmdb_id is required)_                   |
+| **format**   | format            | The file format of the subtitles returned. _(srt, ass, vtt, txt, sub, mpl, webvtt, dfxp)_ |
+| **season**   | season            | Desired season of subtitles _(this requires the episode parameter as well)_               |
+| **episode**  | episode           | The episode of the given season.                                                          |
+| **language** | language          | The ISO 3166 code of the provided subtitles.                                              |
+| **encoding** | encoding          | The character encoding of the file.                                                       |
+| **hi**       | isHearingImpaired | A boolean indicating if the subtitles are hearing impaired.                               |
+
+### Types
+
+- **SearchSubtitlesParams**: All valid parameters recognized by the API.
+- **QueryParams**: All parameters (optional and required) available for the wyzie-subs API.
+- **SubtitleData**: All returned values from the API with their respective types.
+
+Our types are very simple and well-documented. Check out the types.ts file [here](https://raw.githubusercontent.com/itzCozi/wyzie-lib/refs/heads/main/src/types.ts).
