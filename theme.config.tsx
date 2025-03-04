@@ -1,56 +1,54 @@
 import { defineTheme, directory, group, link, social } from '@neato/guider/theme';
 import { Logo } from './components/Logo';
 import { NextSeo } from 'next-seo';
-import coverUrl from "./public/cover.png"; 
-import faviconUrl from "./public/favicon.ico";
+import transparentLogo from "./public/transparent-logo.png"; 
+import faviconUrl from "./public/favicon.png";
 
 const starLinks = [
-  link('GitHub', 'https://github.com/sussy-code/smov', {
+  link('GitHub', 'https://github.com/itzcozi/wyzie-subs', {
     style: 'star',
     newTab: true,
     icon: 'akar-icons:github-fill',
   }),
-  link('Discord', '/links/discord', {
+  link('Discord', 'https://discord.gg/2mxraHBVtB', {
     style: 'star',
     newTab: true,
     icon: 'fa6-brands:discord',
   }),
 ];
 
+const usageGuide = (url: string) => `/subs/usage/${url}`;
+
 export default defineTheme({
-  github: "sussy-code/smov",
+  github: "itzcozi/wyzie-subs",
   navigation: [
-    link('Discord', '/links/discord', {
+    link('Discord', 'https://discord.gg/2mxraHBVtB', {
       style: 'star',
       newTab: true,
       icon: 'mdi:discord',
     }),
-    link('Check it out', '/instances', {
-      style: 'star',
-      newTab: true,
-    }),
   ],
   contentFooter: {
-    text: "Made with :3 (sillyness)",
-    editRepositoryBase: "https://github.com/sussy-code/docs/blob/master",
+    text: "Created by BadDeveloper with 💙",
+    editRepositoryBase: "https://github.com/itzcozi/wyzie-docs/blob/master",
     socials: [
-      social.github("https://github.com/sussy-code"),
-      social.discord("/links/discord"),
+      social.github("https://github.com/itzcozi"),
+      social.discord("https://discord.gg/2mxraHBVtB"),
     ]
   },
   meta: (pageMeta) => (
     <NextSeo {...{
-      title: `${pageMeta.title ?? "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)"} | sudo-flix`,
-      description: pageMeta.description ?? "sudo-flix is a free and open source streaming site, no ads, no tracking, no nonsense.",
+      title: `${pageMeta.title ?? "Free, Open-Source API"} | Wyzie Docs`,
+      description: pageMeta.description ?? "The offical documentation for the Wyzie toolset.",
       openGraph: {
         images: [{
-          url: coverUrl.src,
+          url: transparentLogo.src,
         }],
-        title: `${pageMeta.title ?? "Watch your favorite shows and movies for free with no ads ever! (っ'ヮ'c)"} | sudo-flix`,
-        description: pageMeta.description ?? "sudo-flix is a free and open source streaming site, no ads, no tracking, no nonsense.",
+        title: `${pageMeta.title ?? "Free, Open-Source API"} | Wyzie Docs`,
+        description: pageMeta.description ?? "The offical documentation for the Wyzie toolset.",
       },
       twitter: {
-        cardType: 'summary_large_image',
+        cardType: 'summary',
       },
       additionalLinkTags: [
         {
@@ -63,61 +61,43 @@ export default defineTheme({
   ),
   settings: {
     logo: () => <Logo />,
-    backgroundPattern: 'flare',
     colors: {
-      "primary": "#A476D9",
-      "primaryLighter": "#C4ADDE",
-      "primaryDarker": "#6E23C3",
-      "background": "#0C0B13",
-      "backgroundLighter": "#1A1726",
-      "backgroundLightest": "#282438",
+      "primary": "#2563eb",
+      "primaryLighter": "#3b82f6",
+      "primaryDarker": "#1d4ed8",
+      "background": "#0b0b0b",
+      "backgroundLighter": "#111",
+      "backgroundLightest": "#181818",
       "backgroundDarker": "#000000",
-      "line": "#37334C",
-      "text": "#8C899A",
-      "textLighter": "#A6A4AE",
-      "textHighlight": "#FFF"
+      "line": "#333",
+      "text": "#c0c0c0",
+      "textLighter": "#d0d0d0",
+      "textHighlight": "#e0e0e0"
     },
   },
   directories: [
     directory("main", {
       sidebar: [
         ...starLinks,
-        group("Global", [
-          link("Instances", "/instances", { icon: 'mdi:web' }),
-          link("Browser Extension", "/extension", { icon: 'mdi:extension' }),
-          link("Support", "/support", { icon: 'mdi:help' }),
+        group("Wyzie Subs", [
+          link("Introduction", "/subs/introduction"),
+          link.nested({
+              title: 'Usage',
+              items: [
+                link(
+                  'NPM Package',
+                  usageGuide('package'),
+                ),
+                link(
+                  'Direct Fetching',
+                  usageGuide('direct'),
+                ),
+              ],
+            }),
         ]),
-        group("Self-Hosting", [
-          link("Start self-hosting", "/self-hosting/hosting-intro"),
-          link("Configure backend", "/self-hosting/use-backend"),
-          link("PWA vs no-PWA", "/self-hosting/about-pwa"),
-          link("Troubleshooting", "/self-hosting/troubleshooting"),
-        ]),
-        group("Proxy", [
+        group("Wyzie Proxy", [
           link("Introduction", "/proxy/introduction"),
-          link("Deploy", "/proxy/deploy"),
-          link("Configuration", "/proxy/configuration"),
-          link("Changelog", "/proxy/changelog"),
         ]),
-        group("Client", [
-          link("Introduction", "/client/introduction"),
-          link("Deploy", "/client/deploy"),
-          link("TMDB API Key", "/client/tmdb"),
-          link("Configuration", "/client/configuration"),
-          link("Changelog", "/client/changelog"),
-          link("Update guide", "/client/upgrade"),
-        ]),
-        group("Backend", [
-          link("Introduction", "/backend/introduction"),
-          link("Deploy", "/backend/deploy"),
-          link("Configuration", "/backend/configuration"),
-          link("Changelog", "/backend/changelog"),
-          link("Update guide", "/backend/upgrade"),
-        ]),
-        group("Extra", [
-          link("Streaming", "/extra/streaming"),
-          link("Selfhost", "/extra/selfhost"),
-        ])
       ]
     })
   ],

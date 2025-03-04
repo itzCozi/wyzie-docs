@@ -6,65 +6,36 @@ import {
   Hero,
   Frame,
 } from '@neato/guider/client';
-import logoUrl from '../public/transparent-logo.png';
 
 export default function LandingPage() {
   return (
     <GuiderLayout meta={{ layout: 'page' }}>
       <Hero>
-        <div style={{ paddingBottom: '0.7em' }}>
-          <Frame>
-            <img src={logoUrl.src} alt="Logo of sudo-flix" />
-          </Frame>
-        </div>
-        <Hero.Title>sudo-flix</Hero.Title>
+        <Hero.Title>Wyzie Docs</Hero.Title>
         <Hero.Subtitle>
-          A cutesy app for watching your favorite movies and shows. Totally free
-          and open source, forever!
+          Wyzie is an open-sourced toolset for scraping subtitles and anything
+          in between.
         </Hero.Subtitle>
         <Hero.Actions>
-          <Button to="/self-hosting/hosting-intro">Get Started</Button>
-          <Button to="https://github.com/sussy-code/smov" type="secondary">
-            Open on GitHub
+          <Button to="/subs/introduction">Get Started</Button>
+          <Button to="https://wyzie.ru" type="secondary">
+            Check it Out
           </Button>
         </Hero.Actions>
       </Hero>
       <Frame plain={true}>
         <CardGrid>
-          <Card icon="material-symbols:hangout-video-off" title="No Ads">
-            sudo-flix will never show ads, enjoy watching without interruptions.
+          <Card icon="mdi:alert" title="No Restrictions">
+            Wyzie has absolutely no restrictions, you can use it for anything
+            you want. However much you want.
           </Card>
-          <Card icon="ic:baseline-ondemand-video" title="Custom Player">
-            Enjoy a fully custom video player including streaming integration,
-            subtitle customization and easy TV season navigation.
+          <Card icon="mdi:arm-flex" title="Reliable">
+            We pride ourselves on our consistent uptime and (almost) daily
+            updates as well as fast caching.
           </Card>
-          <Card icon="mdi:content-save" title="Saves your progress">
-            Will remember your progress in movies and TV shows, so you can
-            easily continue where you left off.
-          </Card>
-          <Card icon="mdi:bookmark" title="Bookmarking">
-            Allows you to bookmark your favorite movies and TV shows, so you can
-            easily find them again.
-          </Card>
-          <Card icon="mdi:cloud-refresh" title="Syncing across devices">
-            Enjoy uninterrupted streaming as your progress, proxies, and
-            bookmarks sync effortlessly across all your devices.
-          </Card>
-          <Card icon="mdi:power-plug-outline" title="Modular by design">
-            Mix and match different parts of the sudo-flix service, host your
-            backend or use ours, it&apos;ll work either way.
-          </Card>
-          <Card icon="mdi:flag" title="Multiple Languages">
-            Supports over 25 languages, including English, German, French,
-            Spanish, Italian, Czech, Hindi, Arabic, Hebrew and more.
-          </Card>
-          <Card icon="mdi:brush-variant" title="Customizable">
-            Supports various themes, subtitle colors and subtitle sizes so you
-            can make it look however you want.
-          </Card>
-          <Card icon="mdi:cellphone" title="Progressive Web App Support">
-            Supports PWA, so you can install it on your phone and use it just
-            like a native app.
+          <Card icon="mdi:beach" title="Simplcity Redefined">
+            Easy to implement, easy to use. Wyzie is designed to be as simple as
+            possible.
           </Card>
         </CardGrid>
       </Frame>
