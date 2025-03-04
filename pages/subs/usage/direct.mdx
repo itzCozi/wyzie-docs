@@ -1,6 +1,59 @@
----
-title: 'Directly Fetching Wyzie Subs'
----
-
 # Directly Fetching Wyzie Subs
 
+<Note>I strongly recommend using the [NPM package](package) as it is easier and more reliable.</Note>
+
+If you have decided against using the NPM package, then let's get started. I will only be going over API parameters and data returned by the API. How you request the API is entirely up to you.
+
+### Example
+<CodeGroup>
+  <CodeGroup.Code title="Requests">
+    ```
+    https://sub.wyzie.ru/search?id=533535&hi=true
+    https://sub.wyzie.ru/search?id=126506&season=1&episode=3&language=en
+    https://sub.wyzie.ru/search?id=2288&season=1&episode=3&hi=true
+    https://sub.wyzie.ru/search?id=tt1853728
+    https://sub.wyzie.ru/search?id=tt3659388&language=en&format=srt
+    https://sub.wyzie.ru/search?id=tt3659388&encoding=utf-8
+    ```
+  </CodeGroup.Code>
+  <CodeGroup.Code title="Responses">
+    ```json
+    {
+      "id": "1955015532",
+      "url": "https://dl.opensubtitles.org/en/download/subencoding-utf8/src-api/vrf-19990c4d/file/1955015532",
+      "flagUrl": "https://flagsapi.com/US/flat/24.png",
+      "format": "srt",
+      "encoding": "UTF-8",
+      "display": "English",
+      "language": "en",
+      "media": "The Martian",
+      "isHearingImpaired": false
+    }
+    ```
+  </CodeGroup.Code>
+</CodeGroup>
+
+### Parameters
+
+| Parameter            | Example                                       | Description                                                                                 |
+| -------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **id**               | `/search?id=tt3659388` or `/search?id=286217` | The TMDB or IMDB ID of the show or movie _(id is required)_.                                 |
+| **season & episode** | `/search?id=tt0121955&season=1&episode=1`     | The season and episode of the media if it's a show. _(Both season and episode are required.)_ |
+| **language**         | `/search?id=tt3659388&language=en`            | The language of the subtitles that will be returned _(must be in an ISO 3166-2 code)_.       |
+| **format**           | `/search?id=tt3659388&format=srt`             | The format of subtitles returned.                                                            |
+| **hi**               | `/search?id=tt3659388&hi=true`                | Determines if the subtitles are for the hearing impaired.                                    |
+| **encoding**         | `/search?id=tt3659388&encoding=utf-8`         | The character encoding of the subtitle files.                                                |
+
+### Data Returned
+
+| Object                | Description                                                         |
+| --------------------- | ------------------------------------------------------------------- |
+| **id**                | The ID of the subtitle file.                                         |
+| **url**               | The URL to the subtitle file.                                        |
+| **flagUrl**           | URL to the flag of the language's locale.                            |
+| **format**            | The format of the subtitle file.                                     |
+| **encoding**          | The character encoding of the subtitle file.                         |
+| **display**           | The language of the subtitle, capitalized.                           |
+| **language**          | The ISO 3166-2 code of the language.                                 |
+| **media**             | The name of the media that the subtitles are for.                    |
+| **isHearingImpaired** | Boolean representing if the subtitle is hearing impaired accessible. |
