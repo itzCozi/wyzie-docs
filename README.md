@@ -1,4 +1,3 @@
-# wyzie-docs docs
+# Wyzie Docs
 
-Find it at: idk i got a C&D
-
+Find it at https://docs.wyzie.ru

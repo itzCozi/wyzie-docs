@@ -10,7 +10,6 @@ export default defineTheme({
   github: "itzcozi/wyzie-subs",
   navigation: [
     link('Discord', 'https://discord.gg/2mxraHBVtB', {
-      style: 'star',
       newTab: true,
       icon: 'mdi:discord',
     }),
@@ -56,7 +55,7 @@ export default defineTheme({
       "background": "#0b0b0b",
       "backgroundLighter": "#141414",
       "backgroundLightest": "#181818",
-      "backgroundDarker": "#070707",
+      "backgroundDarker": "#090909",
       "line": "#353535",
       "text": "#c0c0c0",
       "textLighter": "#d0d0d0",
