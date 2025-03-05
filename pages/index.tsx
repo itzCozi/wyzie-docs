@@ -11,7 +11,9 @@ export default function LandingPage() {
   return (
     <GuiderLayout meta={{ layout: 'page' }}>
       <Hero>
-        <Hero.Title>Wyzie Docs</Hero.Title>
+        <Hero.Title>
+          <span style={{ color: '#2563eb' }}>Wyzie</span> Docs
+        </Hero.Title>
         <Hero.Subtitle>
           Wyzie is an open-sourced toolset for scraping subtitles and anything
           in between.

@@ -4,3 +4,31 @@ title: 'Hosting Wyzie Proxy'
 
 # Hosting Wyzie Proxy
 
+Building Wyzie Proxy is easier than breathing, thanks to Nitro. First, clone the repository of Wyzie Proxy using:
+
+```bash
+git clone https://github.com/itzcozi/wyzie-proxy
+```
+
+Then, install all the necessary packages with:
+
+```bash
+pnpm install
+```
+
+After all packages are installed, you can build the proxy:
+
+<CodeGroup>
+  <CodeGroup.Code title="Regular">
+    ```bash
+    pnpm build
+    ```
+  </CodeGroup.Code>
+  <CodeGroup.Code title="Cloudflare Workers">
+    ```bash
+    pnpm build:cloudflare
+    ```
+  </CodeGroup.Code>
+</CodeGroup>
+
+The output will be generated in the `/.output/server` folder. If you are deploying to Cloudflare Workers, copy and paste the `index.mjs` file to the worker; otherwise, you can deploy the files as normal.

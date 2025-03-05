@@ -47,16 +47,17 @@ export default defineTheme({
     }} />
   ),
   settings: {
+    toc: false,
     logo: () => <Logo />,
     colors: {
       "primary": "#2563eb",
       "primaryLighter": "#3b82f6",
       "primaryDarker": "#1d4ed8",
       "background": "#0b0b0b",
-      "backgroundLighter": "#111",
+      "backgroundLighter": "#141414",
       "backgroundLightest": "#181818",
       "backgroundDarker": "#070707",
-      "line": "#333",
+      "line": "#353535",
       "text": "#c0c0c0",
       "textLighter": "#d0d0d0",
       "textHighlight": "#e0e0e0"
