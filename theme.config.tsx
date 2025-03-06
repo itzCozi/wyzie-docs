@@ -47,6 +47,7 @@ export default defineTheme({
   ),
   settings: {
     toc: false,
+    backgroundPattern: 'flare',
     logo: () => <Logo />,
     colors: {
       "primary": "#2563eb",

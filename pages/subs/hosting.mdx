@@ -11,8 +11,17 @@ Without a sufficient number of proxies, the API will not work and will continuou
 </Warning>
 
 ## Steps
-
-1. Create about 100 proxies following this [guide](/proxy/hosting) hosted anywhere.
-2. Load the proxies into the `proxies.json` file in your Wyzie Subs repository.
-3. Build Wyzie Subs and host it basically anywhere (I prefer Cloudflare Workers).
-4. Ensure that a transform rule is configured to set `Access-Control-Allow-Origin` to `*`.
+<Steps>
+  <Steps.Step>
+    Create about 100 proxies following this [guide](/proxy/hosting) hosted anywhere.
+  </Steps.Step>
+  <Steps.Step>
+    Load the proxies into the `proxies.json` file in your Wyzie Subs repository.
+  </Steps.Step>
+    <Steps.Step>
+    Build Wyzie Subs and host it basically anywhere (I prefer Cloudflare Workers).
+  </Steps.Step>
+    <Steps.Step>
+    Ensure that a transform rule is configured to set `Access-Control-Allow-Origin` to `*`.
+  </Steps.Step>
+</Steps>

@@ -6,13 +6,29 @@ import {
   Hero,
   Frame,
 } from '@neato/guider/client';
+import logoUrl from '../public/transparent-logo.png';
 
 export default function LandingPage() {
   return (
     <GuiderLayout meta={{ layout: 'page' }}>
       <Hero>
         <Hero.Title>
-          <span style={{ color: '#2563eb' }}>Wyzie</span> Docs
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            <img
+              style={{ height: '3rem' }}
+              src={logoUrl.src}
+              alt="Logo of wyzie-docs"
+            />
+            <span style={{ fontSize: '3rem', fontWeight: 'bold' }}>
+              <span style={{ color: '#2563eb' }}>Wyzie</span> Docs
+            </span>
+          </div>
         </Hero.Title>
         <Hero.Subtitle>
           Wyzie is an open-sourced toolset for scraping subtitles and anything
