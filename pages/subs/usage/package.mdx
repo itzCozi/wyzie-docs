@@ -7,28 +7,28 @@ The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the bes
 
 ## Installation
 
-<CodeGroup>
-  <CodeGroup.Code title="NPM">
+<Tabs items={["NPM", "PNPM", "Yarn"]}>
+  <Tabs.Tab>
     ```bash
     npm install wyzie-lib
     ```
-  </CodeGroup.Code>
-  <CodeGroup.Code title="PNPM">
+  </Tabs.Tab>
+  <Tabs.Tab>
     ```bash
     pnpm install wyzie-lib
     ```
-  </CodeGroup.Code>
-  <CodeGroup.Code title="Yarn">
+  </Tabs.Tab>
+  <Tabs.Tab>
     ```bash
     yarn add wyzie-lib
     ```
-  </CodeGroup.Code>
-</CodeGroup>
+  </Tabs.Tab>
+</Tabs>
 
 ## Usage
 
-<CodeGroup>
-  <CodeGroup.Code title="Fetching Subtitles">
+<Tabs items={["Fetching Subtitles", "VTT Parser"]}>
+  <Tabs.Tab>
     ```ts
     import { type SubtitleData, searchSubtitles, parseToVTT } from "wyzie-lib";
     
@@ -36,8 +36,8 @@ The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the bes
     const data: SubtitleData[] = await searchSubtitles({ tmdb_id: 286217, format: "srt" });
     console.log(data[0].id); // Prints the ID of the first subtitle object
     ```
-  </CodeGroup.Code>
-  <CodeGroup.Code title="VTT Parser">
+  </Tabs.Tab>
+  <Tabs.Tab>
     ```ts
     import { type SubtitleData, searchSubtitles, parseToVTT } from "wyzie-lib";
 
@@ -47,8 +47,8 @@ The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the bes
     const vttContent = await parseToVTT(data[0].url); // Passes the first subtitle URL
     console.log(vttContent); // Prints the raw VTT content
     ```
-  </CodeGroup.Code>
-</CodeGroup>
+  </Tabs.Tab>
+</Tabs>
 
 ### Parameters
 

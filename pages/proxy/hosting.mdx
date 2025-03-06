@@ -18,17 +18,17 @@ pnpm install
 
 After all packages are installed, you can build the proxy:
 
-<CodeGroup>
-  <CodeGroup.Code title="Regular">
+<Tabs items={["Regular", "Cloudflare Workers"]}>
+  <Tabs.Tab>
     ```bash
     pnpm build
     ```
-  </CodeGroup.Code>
-  <CodeGroup.Code title="Cloudflare Workers">
+  </Tabs.Tab>
+  <Tabs.Tab>
     ```bash
     pnpm build:cloudflare
     ```
-  </CodeGroup.Code>
-</CodeGroup>
+  </Tabs.Tab>
+</Tabs>
 
 The output will be generated in the `/.output/server` folder. If you are deploying to Cloudflare Workers, copy and paste the `index.mjs` file to the worker; otherwise, you can deploy the files as normal.
