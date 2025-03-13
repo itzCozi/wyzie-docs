@@ -1,6 +1,8 @@
 # Directly Fetching Wyzie Subs
 
-<Note>I strongly recommend using the [NPM package](package) as it is easier and more reliable.</Note>
+<Caution>
+I strongly recommend using the [NPM package](package) as it is easier and more reliable.
+</Caution>
 
 If you have decided against using the NPM package, then let's get started. I will only be going over API parameters and data returned by the API. How you request the API is entirely up to you.
 
@@ -35,10 +37,6 @@ If you have decided against using the NPM package, then let's get started. I wil
 
 ### Parameters
 
-<Warning>
-When using an IMDB ID, ensure that the first two characters ('tt') are included at the beginning of the ID.
-</Warning>
-
 | Parameter            | Example                                       | Description                                                                                 |
 | -------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **id**               | `/search?id=tt3659388` or `/search?id=286217` | The TMDB or IMDB ID of the show or movie _(id is required)_.                                 |
@@ -47,6 +45,10 @@ When using an IMDB ID, ensure that the first two characters ('tt') are included 
 | **format**           | `/search?id=tt3659388&format=srt`             | The format of subtitles returned.                                                            |
 | **hi**               | `/search?id=tt3659388&hi=true`                | Determines if the subtitles are for the hearing impaired.                                    |
 | **encoding**         | `/search?id=tt3659388&encoding=utf-8`         | The character encoding of the subtitle files.                                                |
+
+<Important>
+When using an IMDB ID, ensure that the first two characters ('tt') are included at the beginning of the ID.
+</Important>
 
 ### Data Returned
 
