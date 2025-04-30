@@ -3,26 +3,15 @@ title: 'Using the Wyzie NPM Package'
 ---
 
 # Using the Wyzie NPM Package
+
 The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the best way to use Wyzie Subs if your project is in JavaScript or TypeScript. Wyzie Lib (the NPM package) is fast, simple, and reliable, as well as having an onboard VTT parser for parsing subtitles into VTT format. Additionally, it has no dependencies, making it lightweight and reliable. [Read the code](https://github.com/itzcozi/wyzie-lib)
 
 ## Installation
 
-<Tabs items={["NPM", "PNPM", "Yarn"]}>
-  <Tabs.Tab>
-    ```bash
-    npm install wyzie-lib
-    ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```bash
-    pnpm install wyzie-lib
-    ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```bash
-    yarn add wyzie-lib
-    ```
-  </Tabs.Tab>
+<Tabs items={['NPM', 'PNPM', 'Yarn']}>
+  <Tabs.Tab>```bash npm install wyzie-lib ```</Tabs.Tab>
+  <Tabs.Tab>```bash pnpm install wyzie-lib ```</Tabs.Tab>
+  <Tabs.Tab>```bash yarn add wyzie-lib ```</Tabs.Tab>
 </Tabs>
 
 ## Usage
@@ -47,25 +36,28 @@ The Wyzie Subs [NPM package](https://www.npmjs.com/package/wyzie-lib) is the bes
     const vttContent = await parseToVTT(data[0].url); // Passes the first subtitle URL
     console.log(vttContent); // Prints the raw VTT content
     ```
+
   </Tabs.Tab>
 </Tabs>
 
 ### Parameters
 
 <Note>
-For more information (or if you are stuck), please visit the [Wyzie Subs homepage](https://sub.wyzie.ru). If you have any questions, start there.
+  For more information (or if you are stuck), please visit the [Wyzie Subs
+  homepage](https://sub.wyzie.ru). If you have any questions, start there.
 </Note>
 
-| Parameter    | Name              | Description                                                                               |
-| ------------ | ----------------- | ----------------------------------------------------------------------------------------- |
-| **tmdb_id**  | TmdbId            | The TMDB ID of the movie or TV show. _(tmdb_id or imdb_id is required)_                   |
-| **imdb_id**  | ImdbId            | The IMDB ID of the movie or TV show. _(imdb_id or tmdb_id is required)_                   |
-| **format**   | format            | The file format of the subtitles returned. _(srt, txt, sub, ssa, ass)_ |
-| **season**   | season            | Desired season of subtitles _(this requires the episode parameter as well)_               |
-| **episode**  | episode           | The episode of the given season.                                                          |
-| **language** | language          | The ISO 3166-2 code of the provided subtitles.                                              |
-| **encoding** | encoding          | The character encoding of the file.                                                       |
-| **hi**       | isHearingImpaired | A boolean indicating if the subtitles are hearing impaired.                               |
+| Parameter    | Name              | Description                                                                 |
+| ------------ | ----------------- | --------------------------------------------------------------------------- |
+| **tmdb_id**  | TmdbId            | The TMDB ID of the movie or TV show. _(tmdb_id or imdb_id is required)_     |
+| **imdb_id**  | ImdbId            | The IMDB ID of the movie or TV show. _(imdb_id or tmdb_id is required)_     |
+| **format**   | format            | The file format of the subtitles returned. _(srt, txt, sub, ssa, ass)_      |
+| **season**   | season            | Desired season of subtitles _(this requires the episode parameter as well)_ |
+| **episode**  | episode           | The episode of the given season.                                            |
+| **language** | language          | The ISO 3166-2 code of the provided subtitles.                              |
+| **encoding** | encoding          | The character encoding of the file.                                         |
+| **hi**       | isHearingImpaired | A boolean indicating if the subtitles are hearing impaired.                 |
+| **source**   | source            | The source of where we stole the subtitle.                                  |
 
 ### Types
 
