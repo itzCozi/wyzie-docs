@@ -13,6 +13,10 @@ export default defineTheme({
       newTab: true,
       icon: 'mdi:discord',
     }),
+    link('Donate', 'https://donate.cozi.lol', {
+      newTab: true,
+      icon: 'mdi:donate',
+    }),
   ],
   contentFooter: {
     text: "Created by BadDeveloper with 💙",
