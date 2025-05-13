@@ -4,19 +4,15 @@ title: 'Hosting Wyzie Subs'
 
 # Hosting Wyzie Subs
 
-Anyone can host Wyzie Subs, but it costs a lot of money. Wyzie relies on a swarm of proxies to do its bidding (around 200+). These proxies can be hosted basically anywhere: Cloudflare Workers, Netlify, Railway, Vercel, Azure—the list goes on. They are extremely fast and lightweight and can be used to proxy requests. We then cache all of the data we serve, so we only make a limited number of requests to Open-Subtitles. Additionally, the public Wyzie Subs code is not up-to-date with the currently deployed version, meaning some secret sauce is missing.
-
-<Warning>
-Without a sufficient number of proxies, the API will not work and will continuously return 500 errors because it is getting blocked.
-</Warning>
+Anyone can host Wyzie Subs, but it does involve costs. Wyzie relies on a single i6.shark proxy that generates IPv6 addresses on a VPS with a /48 subnet. Setting up i6.shark is challenging as there is no official documentation (too lazy), but once configured, you simply need to update the proxy URL in "proxy.ts" to point to your VPS's IP address.
 
 ## Steps
 <Steps>
   <Steps.Step>
-    Create about 100 proxies following this [guide](/proxy/hosting) hosted anywhere.
+    Host your instance of (i6.shark)[https://github.com/i6.shark] on your VPS.
   </Steps.Step>
   <Steps.Step>
-    Load the proxies into the `proxies.json` file in your Wyzie Subs repository.
+    Change the proxy URL in "proxy.ts" to your VPS's URL and test.
   </Steps.Step>
     <Steps.Step>
     Build Wyzie Subs and host it basically anywhere (I prefer Cloudflare Workers).
